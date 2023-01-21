@@ -26,7 +26,7 @@ class ResultActivity : AppCompatActivity() {
         Database.resultRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val value = snapshot.getValue().toString()
-                binding.result.text = value
+                binding.result.setText(value)
                 Log.d("TAG", "Value is $value")
             }
 
