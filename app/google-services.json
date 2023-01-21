@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "287742454201",
+    "project_id": "digitalsawitpro-af269",
+    "storage_bucket": "digitalsawitpro-af269.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287742454201:android:a2722843722cf3e4d52e68",
+        "android_client_info": {
+          "package_name": "com.arcquila.digitalsawitpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287742454201-7fmhkrfjom0j29e4ih612lkoq9nhkao0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arcquila.digitalsawitpro",
+            "certificate_hash": "408dfc0515f3e4dbf910152e2c3d93c8a849a913"
+          }
+        },
+        {
+          "client_id": "287742454201-t54i413civ31gpqogaupkejtngci61dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPEH8-uc45xkq0oZEhQkCgpR2HaH5CoRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287742454201-t54i413civ31gpqogaupkejtngci61dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,11 +17,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.arcquila.digitalsawitpro.MainActivity.Companion.STORAGE_REQUEST_CODE
 import com.arcquila.digitalsawitpro.databinding.ActivityMainBinding
+import com.arcquila.digitalsawitpro.firebase.Database
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -84,7 +84,10 @@ class MainActivity : AppCompatActivity() {
             val textTaskResult = textRecognizer.process(input).addOnSuccessListener {
                 progressDialog.dismiss()
                 val recognizedText = it.text
-                binding.recognizedTextEt.setText(recognizedText)
+                Database.insertData(recognizedText)
+                val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                startActivity(intent)
+
             }.addOnFailureListener { e ->
                 progressDialog.dismiss()
                 showToast("Failed to recognize text due ${e.message}")
@@ -97,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showInputDialog() {
-        val popUpMenu = PopupMenu(this, inputImageBtn)
+        val popUpMenu = PopupMenu(this, binding.inputImageBtn)
         popUpMenu.menu.add(Menu.NONE,1,1,"CAMERA")
         popUpMenu.menu.add(Menu.NONE,2,2,"GALLERY")
         popUpMenu.show()
